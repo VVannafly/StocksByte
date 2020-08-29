@@ -6,7 +6,7 @@
 //  Copyright © 2020 Dmitriy Chernov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct StockModel {                                 //Model of our encoded data
     var companies = [
@@ -27,13 +27,13 @@ struct StockModel {                                 //Model of our encoded data
         return String(format: "%0.2f", price)
     }
     
-    var arrow: String {
+    var arrow: (String, UIColor) {
         if priceChange > 0 {
-            return "green"
+            return ("arrow.up.right", .green)
         } else if priceChange < 0 {
-            return "red"
+            return ("arrow.down.right", .red)
         } else {
-            return "black"
+            return ("minus", .systemGray)
         }
     }
     

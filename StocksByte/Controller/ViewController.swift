@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var priceChangeLabel: UILabel!
+    @IBOutlet weak var priceChangeArrow: UIImageView!
     @IBOutlet weak var companyPickerView: UIPickerView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -40,6 +41,8 @@ class ViewController: UIViewController {
         priceLabel.text = "-"
         priceChangeLabel.text = "-"
         symbolLabel.text = "-"
+        priceChangeArrow.image = UIImage(systemName: "minus")
+        priceChangeArrow.tintColor = .systemGray
         
         let selectedRow = companyPickerView.selectedRow(inComponent: 0)
         let selectedSymbol = Array(stockManager.companies.values)[selectedRow]
@@ -78,7 +81,8 @@ extension ViewController: StockManagerDelegate {
             self?.companyLabel.text = stock.company
             self?.symbolLabel.text = stock.symbol
             self?.priceLabel.text = stock.priceString
-         
+            self?.priceChangeArrow.image = UIImage(systemName: stock.arrow.0)
+            self?.priceChangeArrow.tintColor = stock.arrow.1
             self?.priceChangeLabel.text = stock.priceChangeString
         }
     }
