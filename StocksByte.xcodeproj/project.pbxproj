@@ -16,6 +16,7 @@
 		0A57564724F9942900C296BB /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57564624F9942900C296BB /* StockData.swift */; };
 		0A57564924F9942F00C296BB /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57564824F9942F00C296BB /* StockModel.swift */; };
 		0A57564B24F9945000C296BB /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57564A24F9945000C296BB /* StockManager.swift */; };
+		0AAEDD6724FAA18A003C7D46 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEDD6624FAA18A003C7D46 /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0A57564624F9942900C296BB /* StockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
 		0A57564824F9942F00C296BB /* StockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		0A57564A24F9945000C296BB /* StockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
+		0AAEDD6624FAA18A003C7D46 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				0A57564A24F9945000C296BB /* StockManager.swift */,
 				0A57564824F9942F00C296BB /* StockModel.swift */,
 				0A57564624F9942900C296BB /* StockData.swift */,
+				0AAEDD6624FAA18A003C7D46 /* ImageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				0A57564724F9942900C296BB /* StockData.swift in Sources */,
 				0A57564924F9942F00C296BB /* StockModel.swift in Sources */,
+				0AAEDD6724FAA18A003C7D46 /* ImageManager.swift in Sources */,
 				0A57564B24F9945000C296BB /* StockManager.swift in Sources */,
 				0A57562E24F9937D00C296BB /* ViewController.swift in Sources */,
 				0A57562A24F9937D00C296BB /* AppDelegate.swift in Sources */,

@@ -15,10 +15,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var priceChangeLabel: UILabel!
     @IBOutlet weak var priceChangeArrow: UIImageView!
+    @IBOutlet weak var companyLogo: UIImageView!
     @IBOutlet weak var companyPickerView: UIPickerView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var stockManager = StockManager()
+    var imageManager = ImageManager()
     
     
     //MARK: - Lifecycle
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
         companyPickerView.dataSource = self
         companyPickerView.delegate = self
         stockManager.delegate = self
+        imageManager.delegate = self
         
         requestQuoteUpdate()
         activityIndicator.hidesWhenStopped = true
@@ -43,10 +46,12 @@ class ViewController: UIViewController {
         symbolLabel.text = "-"
         priceChangeArrow.image = UIImage(systemName: "minus")
         priceChangeArrow.tintColor = .systemGray
+        companyLogo.image = nil
         
         let selectedRow = companyPickerView.selectedRow(inComponent: 0)
         let selectedSymbol = Array(stockManager.companies.values)[selectedRow]
         stockManager.fetchStock(symbol: selectedSymbol)
+        imageManager.requestImage(symbol: selectedSymbol)
         
     }
     
@@ -90,7 +95,16 @@ extension ViewController: StockManagerDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-    
 }
 
+extension ViewController: ImageManagerDelegate {
+    func didLoadImage(_ imageManager: ImageManager, image: UIImage) {
+        DispatchQueue.main.async { [weak self] in
+            self?.companyLogo.image = image
+            
+        }
+    }
+    func didFailImageError(error: Error) {
+        print(error)
+    }
+}
