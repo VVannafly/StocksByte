@@ -9,14 +9,7 @@
 import UIKit
 
 struct StockModel {                                 //Model of our encoded data
-    var companies = [
-        "Apple": "AAPL",
-        "Microsoft": "MSFT",
-        "Google" : "GOOG",
-        "Amazon": "AMZN",
-        "Facebook" : "FB"
-    ]
-    
+
     var symbol = "-"
     let company: String
     let price: Double
@@ -24,7 +17,7 @@ struct StockModel {                                 //Model of our encoded data
     
     
     var priceString: String {
-        return String(format: "%0.2f", price)
+        return String(format: "%0.2f$", price)
     }
     
     var arrow: (String, UIColor) {
@@ -38,6 +31,7 @@ struct StockModel {                                 //Model of our encoded data
     }
     
     var priceChangeString: String {
-        return String(format: "%0.2f", priceChange)
+        return String(format: "%0.2f$", priceChange)
     }
 }
+

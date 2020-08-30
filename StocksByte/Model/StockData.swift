@@ -14,3 +14,4 @@ struct StockData: Codable {             //Parsing JSON Data
     let latestPrice: Double
     let change: Double
 }
+

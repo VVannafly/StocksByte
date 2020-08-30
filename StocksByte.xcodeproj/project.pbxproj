@@ -12,11 +12,13 @@
 		0A57562E24F9937D00C296BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57562D24F9937D00C296BB /* ViewController.swift */; };
 		0A57563324F9937F00C296BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A57563224F9937F00C296BB /* Assets.xcassets */; };
 		0A57563624F9937F00C296BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A57563424F9937F00C296BB /* LaunchScreen.storyboard */; };
-		0A57564524F993FE00C296BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A57564324F993FE00C296BB /* Main.storyboard */; };
+		0A57564524F993FE00C296BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A57564324F993FE00C296BB /* Main.storyboard */; settings = {ASSET_TAGS = (TableViewController, ); }; };
 		0A57564724F9942900C296BB /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57564624F9942900C296BB /* StockData.swift */; };
 		0A57564924F9942F00C296BB /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57564824F9942F00C296BB /* StockModel.swift */; };
 		0A57564B24F9945000C296BB /* StockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57564A24F9945000C296BB /* StockManager.swift */; };
 		0AAEDD6724FAA18A003C7D46 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEDD6624FAA18A003C7D46 /* ImageManager.swift */; };
+		0AAEDD6924FAC6C9003C7D46 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEDD6824FAC6C9003C7D46 /* TableViewController.swift */; };
+		0AAEDD6B24FAC6E3003C7D46 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEDD6A24FAC6E3003C7D46 /* TableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		0A57564824F9942F00C296BB /* StockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		0A57564A24F9945000C296BB /* StockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockManager.swift; sourceTree = "<group>"; };
 		0AAEDD6624FAA18A003C7D46 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		0AAEDD6824FAC6C9003C7D46 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		0AAEDD6A24FAC6E3003C7D46 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				0A57564824F9942F00C296BB /* StockModel.swift */,
 				0A57564624F9942900C296BB /* StockData.swift */,
 				0AAEDD6624FAA18A003C7D46 /* ImageManager.swift */,
+				0AAEDD6A24FAC6E3003C7D46 /* TableCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				0A57562D24F9937D00C296BB /* ViewController.swift */,
+				0AAEDD6824FAC6C9003C7D46 /* TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,6 +135,9 @@
 		0A57561E24F9937D00C296BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					TableViewController,
+				);
 				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Dmitriy Chernov";
@@ -174,9 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AAEDD6B24FAC6E3003C7D46 /* TableCell.swift in Sources */,
 				0A57564724F9942900C296BB /* StockData.swift in Sources */,
 				0A57564924F9942F00C296BB /* StockModel.swift in Sources */,
 				0AAEDD6724FAA18A003C7D46 /* ImageManager.swift in Sources */,
+				0AAEDD6924FAC6C9003C7D46 /* TableViewController.swift in Sources */,
 				0A57564B24F9945000C296BB /* StockManager.swift in Sources */,
 				0A57562E24F9937D00C296BB /* ViewController.swift in Sources */,
 				0A57562A24F9937D00C296BB /* AppDelegate.swift in Sources */,

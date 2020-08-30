@@ -8,7 +8,7 @@
 
 import UIKit
 protocol ImageManagerDelegate {
-    func didLoadImage(_ imageManager: ImageManager, image: UIImage)
+    func didLoadImage(_ imageManager: ImageManager, image: UIImage,num: Int)
     func didFailImageError(error: Error)
 }
 
@@ -18,12 +18,14 @@ struct ImageManager{
     
     var delegate: ImageManagerDelegate?
     
-    func requestImage(symbol: String){
-        let imgURL = "\(stockURL)\(symbol)/logo\(token)"      //Input a company symbol
-        performRequest(with: imgURL)
+    func requestImage(symbol: String,group: DispatchGroup, num: Int){
+        //for i in 0..<symbols.count {
+            let imgURL = "\(stockURL)\(symbol)/logo\(token)"      //Input a company symbol
+            performRequest(with: imgURL,group: group,num: num)
+        //}
     }
     
-    func performRequest(with imgURL: String) {
+    func performRequest(with imgURL: String,group: DispatchGroup,num: Int) {
         guard let url = URL(string: imgURL) else {
             return
         }
@@ -32,16 +34,19 @@ struct ImageManager{
             if error != nil {
                 print("url error")
                 self.delegate?.didFailImageError(error: error!)
+                group.leave()
                 return
             }
             if let safeData = data,
                 (response as? HTTPURLResponse)?.statusCode == 200 {
                 if let jsonImage = (try? JSONSerialization.jsonObject(with: safeData) as? [String: Any]) {
                     self.loadImage(link: URL(string: jsonImage["url"] as! String)!, complete: {img in
-                        self.delegate?.didLoadImage(self, image: img!)
+                        self.delegate?.didLoadImage(self, image: img!,num: num)
+                        group.leave()
                     })
                 } else {
                     print("url error")
+                    group.leave()
                 }
             }
         }
